@@ -1,0 +1,25 @@
+version: "3"
+services:
+  gothub:
+    image: codeberg.org/gothub/gothub:latest   # Master branch
+    # image: codeberg.org/gothub/gothub:dev    # Dev branch
+    restart: unless-stopped
+    ports:
+      - "6567:3000"
+    environment:
+      - DOCKER=true
+      - GOTHUB_SETUP_COMPLETE=false
+      - GOTHUB_PROXYING_ENABLED=false
+      - GOTHUB_IP_LOGGED=false
+      - GOTHUB_REQUEST_URL_LOGGED=false
+      - GOTHUB_USER_AGENT_LOGGED=false
+      - GOTHUB_DIAGNOSTIC_INFO_LOGGED=false
+      - GOTHUB_INSTANCE_PRIVACY_POLICY=
+      - GOTHUB_INSTANCE_COUNTRY=US
+      - GOTHUB_INSTANCE_PROVIDER=
+      - GOTHUB_INSTANCE_CLOUDFLARE=true
+    healthcheck:
+      test: wget -nv --tries=1 --spider http://127.0.0.1:3000/api/v1/version || exit 1
+      interval: 30s
+      timeout: 5s
+      retries: 2

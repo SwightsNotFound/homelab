@@ -1,0 +1,15 @@
+services:
+  navidrome:
+    image: deluan/navidrome:latest
+    ports:
+      - "4533:4533"
+    restart: unless-stopped
+    environment:
+      # Optional: put your config options customization here. Examples:
+      - PUID=1000
+      - PGID=1000
+      - ND_LASTFM_APIKEY=3ac1daf4e58e0904e53de5fcfab94c7f
+      - ND_LASTFM_SECRET=3cabb634c067ced207ee59e9b8a29466
+    volumes:
+      - "/home/admin/navidrome:/data"
+      - "/home/admin/Media/Media/Songs:/music:ro"

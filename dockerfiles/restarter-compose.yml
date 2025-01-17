@@ -1,0 +1,14 @@
+services:
+  restarter:
+    image: docker:cli
+    restart: unless-stopped
+    volumes: ["/var/run/docker.sock:/var/run/docker.sock"]
+    entrypoint: ["/bin/sh","-c"]
+    command:
+      - |
+        while true; do
+          if [ "$$(date +'%H:%M')" = '20:00' ]; then
+            docker restart qbittorrent
+          fi
+          sleep 60
+        done

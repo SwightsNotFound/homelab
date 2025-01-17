@@ -1,0 +1,172 @@
+/* Login page pic */
+#loginPage {
+    background: url('https://picsum.photos/1920/1080');
+    background-size: cover;
+  }
+  
+  
+  /* Transparent top menu */
+  .skinHeader.focuscontainer-x.skinHeader-withBackground.skinHeader-blurred {
+    background: none;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  .skinHeader.focuscontainer-x.skinHeader-withBackground.skinHeader-blurred.noHomeButtonHeader {
+    background: none;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  
+  
+  /* Better login screen */
+  /* Narrow the login form */
+  #loginPage .readOnlyContent,
+  #loginPage form {
+    max-width: 22em;
+  }
+  
+  /* Hide "please login" text, margin is to prevent login form moving too far up */
+  #loginPage h1 {
+    display: none;
+  }
+  #loginPage .padded-left.padded-right.padded-bottom-page {
+    margin-top: 50px;
+  }
+  
+  /* Hide "manual" and "forgot" buttons */
+  #loginPage .raised.cancel.block.btnManual.emby-button {
+    display: none;
+  }
+  #loginPage .raised.cancel.block.btnForgotPassword.emby-button {
+    display: none;
+  }
+  
+  
+  /* Hide cast and crew */
+  #castCollapsible {
+    display: none;
+  }
+  
+  
+  /* Hide more like this */
+  #similarCollapsible {
+    display: none;
+  }
+  
+  
+  /* Disable Image Carousel for Libraries */
+  @media all and (min-width: 50em) {
+    .homePage .emby-scroller {
+      margin-right: 0;
+    }
+    .homePage .emby-scrollbuttons {
+      display: none;
+    }
+    .homePage .itemsContainer {
+      flex-wrap: wrap;
+    }
+  }
+  
+  
+  /*Rounded corners and square hover buttons*/
+  .cardContent-button, 
+  .cardContent-shadow, 
+  .itemDetailImage, 
+  .cardOverlayButton-hover, 
+  .cardOverlayContainer,
+  .cardImageContainer,
+  .cardPadder,
+  .listItemImage,
+  .listItemImageButton,
+  .listItemButton,
+  .headerButton,
+  .paper-icon-button-light,
+  .innerCardFooter,
+  .blurhash-canvas,
+  .actionSheetMenuItem:hover,
+  .dialog
+  {border-radius: 6px !important;}
+  
+  
+  /*Theme menu dialogues*/
+  .dialog {background-color: rgba(0, 0, 0, 0.9);}
+  .actionSheetMenuItem:hover {background-color: rgba(0, 164, 220, 0.2);}
+  .mainDrawer {background-color: rgba(0, 0, 0, 0.9);}
+  .navMenuOption:hover {background: rgba(0, 164, 220, 0.2);}
+  
+  
+  /*Tweak entry fields*/
+  .selectContainer {margin-right: 1em !important;}
+  .checkboxOutline {border-radius: 6px; background-color: rgba(0, 0, 0, 0.5);}
+  .emby-input, .emby-textarea, .emby-select-withcolor 
+  {background: rgba(0, 0, 0, 0.5); border: 0.01em solid rgba(255, 255, 255, 0.22); border-radius: 6px;}
+  .emby-input:focus, .emby-textarea;focus, .emby-select-withcolor:focus 
+  {background: rgba(0, 0, 0, 0.5); border: 0.01em solid #00a4dcc2 !important;}
+  .trackSelections {max-width: 22em;}
+  
+  
+  /*Make the red checkmark and likes blue like everything else*/
+  .playstatebutton-icon-played, .ratingbutton-icon-withrating {color: #00a4dc;}
+  
+  
+  /* Hide Guest Stars */
+  #guestCastCollapsible {
+    display: none;
+  }
+  
+  
+  /* Make watched icon dark and transparent */
+  .indicator { background: #00000058 !important; }
+  
+  
+  /* Make count indicator icon dark and transparent */
+  .countIndicator {background: #00000058;}
+  
+  
+  /* Hide cast button */
+  .headerCastButton {
+    display: none;
+  }
+  
+  
+  /* Image edge rounded */
+  .cardContent-button,
+  .itemDetailImage {
+    border-radius: 0.25em;
+  }
+  
+  
+  /* Enlarge Tab Buttons */
+  /* Adjust both "size-adjust" and "size" to modify size */
+  .headerTabs.sectionTabs {
+    text-size-adjust: 110%;
+    font-size: 110%;
+  }
+  .pageTitle {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .emby-tab-button {
+    padding: 1.75em 1.7em;
+  }
+  
+  
+  /* Size episode preview images in a more compact way */
+  .listItemImage.listItemImage-large.itemAction.lazy {
+    height: 110px;
+  }
+  .listItem-content {
+    height: 115px;
+  }
+  .secondary.listItem-overview.listItemBodyText {
+    height: 61px;
+    margin: 0;
+  }
+  
+  
+  /*Hide the "Trailers" tab in Movies and the "Upcoming" tab in TV Shows*/
+  .emby-tab-button[data-index="2"] {
+    display: none !important;
+  }
+  
+  
+  /*Remove "My Media" title*/
+  .section0 .sectionTitle {display: none;}

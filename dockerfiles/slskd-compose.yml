@@ -1,0 +1,18 @@
+services:
+  slskd:
+    image: slskd/slskd
+    container_name: slskd
+    ports:
+     - "5030:5030"
+     - "5031:5031"
+     - "50300:50300"
+    environment:
+     - SLSKD_REMOTE_CONFIGURATION=true
+     - UMASK=000
+     - PUID=0
+     - PGID=0
+    volumes:
+     - /home/admin/slskd:/app
+     - /home/admin/Media/Media/mdownloads:/downloads
+     - /home/admin/Media/Media/Songs:/share
+    restart: always

@@ -1,0 +1,7 @@
+services:
+  jellyfin_vue:
+    container_name: jellyfin_vue
+    image: ghcr.io/jellyfin/jellyfin-vue:unstable
+    restart: always
+    ports:
+      - 8090:80

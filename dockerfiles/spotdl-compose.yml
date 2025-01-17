@@ -1,0 +1,19 @@
+services:
+  spotdl:
+    container_name: spotdl
+    image: spotdl/spotify-downloader
+    command: web --host 0.0.0.0 --web-use-output-dir
+    environment:
+      - PUID=1000 #CHANGE_TO_YOUR_UID
+      - PGID=1000 #CHANGE_TO_YOUR_GID
+      - TZ=America/Chicago #CHANGE_TO_YOUR_TZ
+      - UMASK=000
+    ports:
+      - 8800:8800
+    volumes:
+      - /home/admin/spotdl:/music #must use the :/music for config to work.
+    restart: unless-stopped
+
+volumes:
+  spotdl:
+    external: true
